@@ -11,37 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141229014840) do
-
-  create_table "artigos", force: true do |t|
-    t.string   "titulo"
-    t.text     "texto"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20141229235658) do
 
   create_table "clientes", force: true do |t|
-    t.string   "nome"
-    t.integer  "servico_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "nome_cliente"
+    t.string   "telefone_cliente"
+    t.string   "email_cliente"
+    t.integer  "id_usuario_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "clientes", ["servico_id"], name: "index_clientes_on_servico_id"
+  add_index "clientes", ["id_usuario_id"], name: "index_clientes_on_id_usuario_id"
 
-  create_table "comentarios", force: true do |t|
-    t.string   "comentario"
-    t.string   "body"
-    t.integer  "artigo_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "patentes", force: true do |t|
+    t.string   "noma_patente"
+    t.integer  "id_patente"
+    t.integer  "id_usuario_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "comentarios", ["artigo_id"], name: "index_comentarios_on_artigo_id"
+  add_index "patentes", ["id_usuario_id"], name: "index_patentes_on_id_usuario_id"
 
-  create_table "servicos", force: true do |t|
-    t.string   "nome"
-    t.string   "tempo_execucao"
+  create_table "usuarios", force: true do |t|
+    t.string   "login_usuario"
+    t.string   "senha_usuario"
+    t.integer  "tipo_usuario"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

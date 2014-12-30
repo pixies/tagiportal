@@ -1,14 +1,9 @@
 Rails.application.routes.draw do
+  resources :patentes
+
   resources :clientes
 
-  resources :servicos
-
-  resources :comentarios
-
-  get 'homepage/index'
-  resources :artigos do
-    resources :comentarios
-  end
+  resources :usuarios
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

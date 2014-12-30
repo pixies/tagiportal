@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  noma_patente: MyString
+  id_patente: 1
+  id_usuario_id: 
+
+two:
+  noma_patente: MyString
+  id_patente: 1
+  id_usuario_id: 
